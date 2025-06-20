@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>แปลงปลูกพืช (สถานะ 2 สี)</title>
+  <title>แปลงปลูกพืช</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
@@ -79,7 +79,7 @@
 </head>
 <body>
   <div class="controls">
-    <button onclick="exportToExcel()">📤 ออกรายงานเป็น Excel</button>
+    <button onclick="exportToExcel()">📤 Excel</button>
   </div>
 
   <div class="wrapper">
@@ -95,7 +95,7 @@
   </div>
 
   <script>
-    const rows = 106;
+    const rows = 107;
     const cols = 200;
     const table = document.getElementById("plant-table");
     const theadRow = table.querySelector("thead tr");
@@ -158,7 +158,7 @@
         const row = [`แถว ${r + 1}`];
         for (let c = 0; c < cols; c++) {
           const index = r * cols + c;
-          row.push(data[index] === 1 ? "งอกแล้ว" : "ยังไม่งอก");
+          row.push(data[index] === 1 ? "งอกแล้ว" : "0");
         }
         ws_data.push(row);
       }
